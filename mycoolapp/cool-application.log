@@ -1,0 +1,2 @@
+2025-08-31T00:01:16.858-06:00  INFO 22787 --- [mycoolapp] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-31T00:01:16.862-06:00  INFO 22787 --- [mycoolapp] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
