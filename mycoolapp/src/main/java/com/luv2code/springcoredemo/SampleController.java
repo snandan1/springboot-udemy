@@ -13,6 +13,7 @@ public class SampleController {
 
     @Autowired
     public void setCoach(@Qualifier("basketballCoach") ICoach aCoach) {
+        System.out.println("Inside SampleController constructor");
         coach = aCoach;
     }
 

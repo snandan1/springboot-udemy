@@ -13,6 +13,7 @@ public class ControllerWithQualifier {
 
     @Autowired
     public ControllerWithQualifier(@Qualifier("cricketCoach") ICoach aCoach) {
+        System.out.println("Inside ControllerWithQualifier constructor");
         coach = aCoach;
     }
 

@@ -8,6 +8,10 @@ import org.springframework.stereotype.Component;
 @Primary
 public class FootballCoach implements ICoach {
 
+    public FootballCoach() {
+        System.out.println("Inside FootballCoach constructor");
+    }
+
     @Override
     public String getDailyWorkout() {
         return "Practice sprinting";
