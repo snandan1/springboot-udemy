@@ -7,17 +7,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class DemoController {
+public class ControllerWithQualifier {
 
-    private ICoach myCoach;
+    private ICoach coach;
 
     @Autowired
-    public DemoController(@Qualifier("hockeyCoach") ICoach aCoach) {
-        myCoach = aCoach;
+    public ControllerWithQualifier(@Qualifier("cricketCoach") ICoach aCoach) {
+        coach = aCoach;
     }
 
-    @GetMapping("/dailyworkout")
-    public String getDailyWorkout() {
-        return myCoach.getDailyWorkout();
+    @GetMapping("qualified-workout")
+    public String getQualifiedWorkout() {
+        return coach.getDailyWorkout();
     }
 }

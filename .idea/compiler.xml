@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="demo" />
+        <module name="mycoolapp-sec2-spring-core" />
+        <module name="mycoolapp" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="demo" options="-parameters" />
+      <module name="mycoolapp" options="-parameters" />
+      <module name="mycoolapp-sec2-spring-core" options="-parameters" />
+      <module name="rest-service" options="-parameters" />
+      <module name="rest-service.main" options="-parameters" />
+      <module name="rest-service.test" options="-parameters" />
+      <module name="springboot-app" options="-parameters" />
+      <module name="springboot-app.main" options="-parameters" />
+      <module name="springboot-app.test" options="-parameters" />
+      <module name="springboot-app1" options="-parameters" />
+      <module name="springboot-app1.main" options="-parameters" />
+      <module name="springboot-app1.test" options="-parameters" />
+    </option>
+  </component>
+</project>
