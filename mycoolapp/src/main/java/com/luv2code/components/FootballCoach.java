@@ -1,6 +1,5 @@
-package com.luv2code.primarycomponent;
+package com.luv2code.components;
 
-import com.luv2code.componentqualifiers.ICoach;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 

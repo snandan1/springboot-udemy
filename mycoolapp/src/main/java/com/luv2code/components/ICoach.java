@@ -1,4 +1,4 @@
-package com.luv2code.componentqualifiers;
+package com.luv2code.components;
 
 public interface ICoach {
     String getDailyWorkout();

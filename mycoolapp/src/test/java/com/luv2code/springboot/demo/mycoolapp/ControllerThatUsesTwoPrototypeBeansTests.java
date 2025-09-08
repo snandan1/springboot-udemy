@@ -11,7 +11,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class ControllerThatUsesTwoBeansOfTheSameTypeTests {
+public class ControllerThatUsesTwoPrototypeBeansTests {
 
     private final String serverUrl = "http://localhost";
 
@@ -31,23 +31,21 @@ public class ControllerThatUsesTwoBeansOfTheSameTypeTests {
     private TestRestTemplate testRestTemplate;
 
     @Test
-    public void getVolleyballWorkoutShouldReturnCorrectMessage() {
-        System.out.printf("%s:%d%s/volleyball-workout", serverUrl, serverPort, contextPath);
+    public void getSoccerWorkoutShouldReturnCorrectMessage() {
         assertThat(
                 this.testRestTemplate
                         .withBasicAuth(userName, password)
                         .getForObject(
-                                String.format("%s:%d%s/volleyball-workout", serverUrl, serverPort, contextPath), String.class))
-                .contains("Practice jumping in the court Practice jumping in the court");
+                                String.format("%s:%d%s/soccer-workout", serverUrl, serverPort, contextPath), String.class))
+                .contains("Practice dribbling Practice dribbling");
     }
 
     @Test
-    public void getBeanEqualityShouldShowBeansAreEqual() {
-        System.out.printf("%s:%d%s/bean-equality", serverUrl, serverPort, contextPath);
+    public void getBeanEqualityShouldShowBeansAreUnEqual() {
         assertThat(this.testRestTemplate
                 .withBasicAuth(userName, password)
                 .getForObject(
-                        String.format("%s:%d%s/bean-equality", serverUrl, serverPort, contextPath), String.class))
-                .isEqualToIgnoringCase("True");
+                        String.format("%s:%d%s/bean-equality-proto", serverUrl, serverPort, contextPath), String.class))
+                .isEqualToIgnoringCase("False");
     }
 }

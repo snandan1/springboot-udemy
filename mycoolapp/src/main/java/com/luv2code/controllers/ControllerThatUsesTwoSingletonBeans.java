@@ -1,17 +1,17 @@
-package com.luv2code.springcoredemo;
+package com.luv2code.controllers;
 
-import com.luv2code.componentqualifiers.ICoach;
+import com.luv2code.components.ICoach;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class ControllerThatUsesTwoBeansOfTheSameType {
+public class ControllerThatUsesTwoSingletonBeans {
 
     private final ICoach volleyballCoachOne;
     private final ICoach volleyballCoachTwo;
 
-    public ControllerThatUsesTwoBeansOfTheSameType(
+    public ControllerThatUsesTwoSingletonBeans(
             @Qualifier("volleyballCoach") ICoach coachOne,
             @Qualifier("volleyballCoach") ICoach coachTwo) {
         volleyballCoachOne = coachOne;

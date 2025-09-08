@@ -1,4 +1,4 @@
-package com.luv2code.componentqualifiers;
+package com.luv2code.components;
 
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
