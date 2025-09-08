@@ -17,8 +17,8 @@ public class ControllerWithQualifier {
         coach = aCoach;
     }
 
-    @GetMapping("qualified-workout")
-    public String getQualifiedWorkout() {
+    @GetMapping("/cricket-workout")
+    public String getCricketWorkout() {
         return coach.getDailyWorkout();
     }
 }

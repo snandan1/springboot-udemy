@@ -17,8 +17,8 @@ public class SampleController {
         coach = aCoach;
     }
 
-    @GetMapping("/setter-injection-test")
-    public String getSetterInjectionTest() {
+    @GetMapping("/basketball-workout")
+    public String getBasketballWorkout() {
         return "From Setter injection method: " + coach.getDailyWorkout();
     }
 }
