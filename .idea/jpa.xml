@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JpaBuddyIdeaProjectConfig">
+    <option name="newEntityIdStrategy" value="Identity" />
+    <option name="newEntityIdType" value="Long" />
+  </component>
+  <component name="PersistenceUnitSettings">
+    <persistence-units>
+      <persistence-unit moduleName="cruddemo" name="Default">
+        <packages>
+          <package value="com.luv2code.cruddemo" />
+        </packages>
+      </persistence-unit>
+      <persistence-unit moduleName="springboot" name="Default" />
+      <persistence-unit moduleName="batch-processing" name="Default">
+        <packages>
+          <package value="com.example.batchprocessing" />
+        </packages>
+      </persistence-unit>
+    </persistence-units>
+  </component>
+</project>
