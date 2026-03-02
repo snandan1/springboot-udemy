@@ -4,6 +4,7 @@ import com.luv2code.cruddemo.controllers.exception.StudentNotFoundException;
 import com.luv2code.cruddemo.controllers.response.StudentErrorResponse;
 import com.luv2code.cruddemo.models.Student;
 import jakarta.annotation.PostConstruct;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/api")
+@Slf4j
 public class StudentController {
 
     private List<Student> students;
@@ -47,7 +49,8 @@ public class StudentController {
                 .setStatus(HttpStatus.NOT_FOUND.value())
                 .setTimestamp(System.currentTimeMillis());
 
+        log.error("StudentNotFoundException caught");
+
         return new ResponseEntity<>(studentErrorResponse, HttpStatus.NOT_FOUND);
     }
-
 }
