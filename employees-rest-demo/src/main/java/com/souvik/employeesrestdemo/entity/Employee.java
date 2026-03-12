@@ -5,22 +5,18 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.experimental.Accessors;
 
 @Entity
 @Table(name = "employee")
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
 @Setter
-@Accessors(chain = true)
 public class Employee {
     @Id
     @Column(nullable = false)
-    private int id;
+    private Integer id;
 
     @Column(name = "first_name")
     private String firstName;

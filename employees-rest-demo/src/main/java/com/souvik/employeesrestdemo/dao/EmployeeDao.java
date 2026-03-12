@@ -5,11 +5,11 @@ import com.souvik.employeesrestdemo.entity.Employee;
 import java.util.List;
 
 public interface EmployeeDao {
-    Employee findById(int id);
+    Employee findById(Integer id);
 
     List<Employee> findAll();
 
     Employee save(Employee employee);
 
-    void deleteById(int id);
+    void deleteById(Integer id);
 }

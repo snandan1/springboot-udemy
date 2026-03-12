@@ -4,7 +4,16 @@ import com.souvik.employeesrestdemo.entity.Employee;
 import com.souvik.employeesrestdemo.service.EmployeeService;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import tools.jackson.databind.json.JsonMapper;
 
 import java.util.List;
@@ -20,7 +29,8 @@ public class EmployeeController {
 
     @GetMapping("/employees")
     public List<Employee> findAll() {
-        return employeeService.findAll();
+        List<Employee> employees = employeeService.findAll();
+        return employees;
     }
 
     @GetMapping("/employees/{employeeId}")
@@ -29,6 +39,7 @@ public class EmployeeController {
     }
 
     @PostMapping("/employees")
+    @Transactional
     public Employee addEmployee(@RequestBody Employee employee) {
         employee.setId(0);
         return employeeService.save(employee);
@@ -40,6 +51,7 @@ public class EmployeeController {
     }
 
     @PatchMapping("/employees/{employeeId}")
+    @Transactional
     public Employee patchEmployee(@PathVariable int employeeId, @RequestBody Map<String, Object> patchPayload) {
         Employee employeeToUpdate = employeeService.findById(employeeId);
 
@@ -56,6 +68,7 @@ public class EmployeeController {
     }
 
     @DeleteMapping("/employees/{employeeId}")
+    @Transactional
     public String deleteEmployee(@PathVariable int employeeId) {
         if (employeeService.findById(employeeId) == null) {
             throw new EntityNotFoundException("Employee with id " + employeeId + " does not exist");
